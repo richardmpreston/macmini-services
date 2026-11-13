@@ -77,6 +77,28 @@ different subnet or a guest SSID, or the router has client/AP isolation enabled.
   script is needed for them.
 - **iPhone / iPad** — Notes ▸ Scan Documents, or the Files share sheet.
 
+### Scanning part of the platen, not all of it
+
+The default scan view only does the full platen. To select a region:
+
+1. **Show Details** — bottom right of the Preview or Image Capture scan window.
+   The simple view has no region option at all, which is why this looks missing.
+2. **Overview** — runs a fast, low-resolution pass of the whole platen.
+3. **Drag a marquee** over the area you want. Once drawn, its bounds are editable
+   numerically, for when you need repeatable dimensions rather than eyeballing it.
+4. Set resolution and format, then **Scan**.
+
+The region goes to AirSane as eSCL scan geometry, so the crop happens at the
+scanner rather than being thrown away afterwards. Selecting a small region and
+*then* raising DPI is the right way to scan photos: resolution where it matters,
+without a full-platen file to match.
+
+**Detect Separate Items**, in the same detail pane, auto-crops several photos laid
+on the platen into individual files — usually better than drawing marquees by hand.
+
+The web UI on port 8090 exposes scan area numerically, which is the route to take
+if a fixed region ever needs scripting.
+
 ## Operational notes
 
 AirSane must be running for anyone to scan, which is why this lives on the mini
