@@ -6,7 +6,9 @@ This machine is the household's always-on host: anything that needs to be runnin
 when nobody is at a keyboard lives here. This repo is the record of how it is put
 together — not application code, which lives in its own repos.
 
-Private on purpose. It accumulates LAN addresses, hostnames and machine layout.
+This repo is public, so it holds setup *procedure* only — no addresses, hostnames,
+credentials or anything else specific to the network. Keep it that way: values
+particular to this machine belong in the local checkout or a private note.
 
 ## Contents
 

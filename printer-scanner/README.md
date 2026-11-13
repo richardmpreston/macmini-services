@@ -55,9 +55,9 @@ Find the IP on the printer's panel (**Setup ▸ Device settings ▸ LAN settings
 ./setup-mg6250-airsane.sh --ip 192.168.1.50
 ```
 
-That pins `bjnp://<ip>` into `pixma.conf` instead of relying on broadcast. Record
-the address here once known, and give the printer a DHCP reservation on the router
-so it doesn't move.
+That pins `bjnp://<ip>` into `pixma.conf` instead of relying on broadcast. Give the
+printer a DHCP reservation on the router so the address can't move — and keep the
+real address out of this repo, which is public.
 
 To test discovery without changing anything:
 
