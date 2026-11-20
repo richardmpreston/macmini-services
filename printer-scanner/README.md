@@ -72,9 +72,9 @@ different subnet or a guest SSID, or the router has client/AP isolation enabled.
 
 - **Web UI** — `http://localhost:8090/` on the mini, or
   `http://<mini-name>.local:8090/` from any browser on the network.
-- **Any Mac** — appears in Printers & Scanners as a *Bonjour Scanner*. Use Image
-  Capture or Preview; multi-page PDF and OCR are handled there, so no custom
-  script is needed for them.
+- **Any Mac** — appears in Printers & Scanners as a *Bonjour Scanner*. Use
+  **Image Capture** (`/Applications`) for anything beyond a single page; Preview's
+  File ▸ Import from Scanner is fine for one-offs. No custom script needed.
 - **iPhone / iPad** — Notes ▸ Scan Documents, or the Files share sheet.
 
 ### Scanning part of the platen, not all of it
@@ -98,6 +98,32 @@ on the platen into individual files — usually better than drawing marquees by 
 
 The web UI on port 8090 exposes scan area numerically, which is the route to take
 if a fixed region ever needs scripting.
+
+### Multi-page documents from sequential scans
+
+Use **Image Capture** (`/Applications/Image Capture.app`), not Preview:
+
+1. Select the MG6250, click **Show Details**.
+2. Set **Format: PDF** — this is what makes the next option appear at all.
+3. Tick **Combine into single document**.
+4. Click **Scan** once per page, replacing the sheet between scans. The pages
+   accumulate into one PDF.
+
+**The trap:** that setting persists between jobs. Before starting a *new*
+document, change the "Scan To" filename, or the new pages are appended to the
+previous PDF.
+
+Preview is the wrong tool for this. Apple documents
+`Edit ▸ Insert ▸ Page from Scanner`, but it is **not offered with this scanner** —
+only *Page from File* and *Blank Page* appear, even with a PDF open and the
+scanner working normally via File ▸ Import from Scanner. Possibly because Preview
+populates that menu from registered devices rather than browsing for Bonjour ones.
+Not worth chasing; Image Capture does the job properly.
+
+If the combine checkbox ever stops working — it has regressed across several past
+macOS releases, the symptom being only the first page landing in the file — scan
+each page to its own PDF, open the first, show the thumbnail sidebar, drag the
+rest in, then File ▸ Export as PDF. Tedious but it has never broken.
 
 ## Operational notes
 
